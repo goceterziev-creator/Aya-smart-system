@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bibi Travel Panel – AYA Smart Travel</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <script defer src="bibi.js"></script>
+</head>
+<body class="bibi-body">
+  <header class="site-header bibi-header">
+    <div class="container header-inner">
+      <div class="logo">Bibi × AYA</div>
+      <nav class="nav">
+        <a href="index.html">← към публичния сайт</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero bibi-hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1>Welcome, Bibi 🎂</h1>
+        <p>Това е твоят личен AYA панел – тук ще виждаш твоите полети, пътувания и оферти.</p>
+        <p class="hero-sub">
+          Тази версия работи изцяло на твоя телефон/браузър (local storage), без акаунти и пароли.
+        </p>
+      </div>
+      <div class="hero-card">
+        <h2>Днешен примерен полет</h2>
+        <ul>
+          <li>✈ W6 4361 · София → Бари</li>
+          <li>Планиран: 06:00 · Обновен: 09:00</li>
+          <li>Статус: <strong>Delayed (пример)</strong></li>
+        </ul>
+        <p class="small">В бъдеща версия тук ще идва информация от реален Flight API.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container bibi-grid">
+      <div>
+        <h2>Моите пътувания</h2>
+        <form id="trip-form" class="contact-form">
+          <div class="field">
+            <label>Дестинация</label>
+            <input type="text" id="trip-destination" required />
+          </div>
+          <div class="field-inline">
+            <div class="field">
+              <label>Дати</label>
+              <input type="text" id="trip-dates" placeholder="напр. 5–10 март" />
+            </div>
+            <div class="field">
+              <label>Бележка</label>
+              <input type="text" id="trip-notes" placeholder="романтика, море, вино..." />
+            </div>
+          </div>
+          <button type="submit" class="btn-primary">Запази пътуване</button>
+          <p class="form-note">Записва се само на този телефон/браузър, за да тестваш идеята.</p>
+        </form>
+
+        <div class="trip-list-wrapper">
+          <h3>Съхранени пътувания</h3>
+          <ul id="trip-list" class="trip-list"></ul>
+        </div>
+      </div>
+
+      <div class="contact-side">
+        <h3>Лични AYA бележки</h3>
+        <p>Тук можеш да пишеш идеи за пътувания, да планираш уикенди, да държиш любимите си оферти.</p>
+        <textarea id="bibi-notes" rows="8" class="notes-area" placeholder="Италия, Paros, Малдиви, road trip, винарни..."></textarea>
+        <p class="form-note">Бележките също се пазят само локално.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>С любов от GT63 & AYA · Bibi Personal Edition</p>
+    </div>
+  </footer>
+</body>
+</html>
