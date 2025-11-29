@@ -4,82 +4,125 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bibi Travel Panel – AYA Smart Travel</title>
-  <link rel="stylesheet" href="../assets/css/style.css" />
+  <title>Bibi × AYA — Personal Travel Panel</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
   <script defer src="bibi.js"></script>
 </head>
-<body class="bibi-body">
-  <header class="site-header bibi-header">
+<body>
+  <header class="header">
     <div class="container header-inner">
-      <div class="logo">Bibi × AYA</div>
-      <nav class="nav">
-        <a href="index.html">← към публичния сайт</a>
-      </nav>
+      <div class="brand">
+        <div class="brand-badge"></div>
+        <div class="brand-title">Bibi × AYA</div>
+      </div>
+      <a class="small" href="index.html">← към публичния сайт</a>
     </div>
   </header>
 
-  <section class="hero bibi-hero">
-    <div class="container hero-inner">
-      <div class="hero-text">
-        <h1>Welcome, Bibi 🎂</h1>
-        <p>Това е твоят личен AYA панел – тук ще виждаш твоите полети, пътувания и оферти.</p>
-        <p class="hero-sub">
-          Тази версия работи изцяло на твоя телефон/браузър (local storage), без акаунти и пароли.
-        </p>
-      </div>
+  <main class="container">
+    <section class="hero">
       <div class="hero-card">
-        <h2>Днешен примерен полет</h2>
-        <ul>
-          <li>✈ W6 4361 · София → Бари</li>
-          <li>Планиран: 06:00 · Обновен: 09:00</li>
-          <li>Статус: <strong>Delayed (пример)</strong></li>
-        </ul>
-        <p class="small">В бъдеща версия тук ще идва информация от реален Flight API.</p>
+        <div class="badge">Welcome, Bibi 🎂 · Personal Edition</div>
+        <h1 class="hero-h1">Твоят нежен travel hub</h1>
+        <p class="hero-sub">Виж полетите си, запазвай пътувания, клиентски заявки и бележки. Всичко се съхранява локално на това устройство.</p>
+        <div class="card">
+          <div class="h3">Днешен примерен полет</div>
+          <ul class="small">
+            <li>✈ W6 4361 · София → Бари</li>
+            <li>Планиран: 06:00 · Обновен: 09:00</li>
+            <li>Статус: <span class="pill">Delayed (пример)</span></li>
+          </ul>
+          <p class="small">В бъдеща версия тук ще идва информация от реален Flight API.</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section">
-    <div class="container bibi-grid">
-      <div>
-        <h2>Моите пътувания</h2>
-        <form id="trip-form" class="contact-form">
-          <div class="field">
-            <label>Дестинация</label>
-            <input type="text" id="trip-destination" required />
-          </div>
-          <div class="field-inline">
-            <div class="field">
+    <section class="section grid">
+      <div class="panel">
+        <div class="h2">Моите пътувания</div>
+        <form id="trip-form">
+          <label>Дестинация</label>
+          <input id="trip-destination" placeholder="Paros, Bari, Maldives…" required />
+
+          <div class="row" style="margin-top:8px">
+            <div>
               <label>Дати</label>
-              <input type="text" id="trip-dates" placeholder="напр. 5–10 март" />
+              <input id="trip-dates" placeholder="напр. 5–10 март" />
             </div>
-            <div class="field">
+            <div>
               <label>Бележка</label>
-              <input type="text" id="trip-notes" placeholder="романтика, море, вино..." />
+              <input id="trip-notes" placeholder="романтика, море, вино…" />
             </div>
           </div>
-          <button type="submit" class="btn-primary">Запази пътуване</button>
-          <p class="form-note">Записва се само на този телефон/браузър, за да тестваш идеята.</p>
+
+          <div style="display:flex;gap:10px;margin-top:12px">
+            <button type="submit" class="btn btn-primary">Запази пътуване</button>
+          </div>
+          <p class="small" style="margin-top:6px">Записва се само на този телефон/браузър, за да тестваш идеята.</p>
         </form>
 
-        <div class="trip-list-wrapper">
-          <h3>Съхранени пътувания</h3>
+        <div style="margin-top:14px">
+          <div class="h3">Съхранени пътувания</div>
           <ul id="trip-list" class="trip-list"></ul>
         </div>
       </div>
 
-      <div class="contact-side">
-        <h3>Лични AYA бележки</h3>
-        <p>Тук можеш да пишеш идеи за пътувания, да планираш уикенди, да държиш любимите си оферти.</p>
-        <textarea id="bibi-notes" rows="8" class="notes-area" placeholder="Италия, Paros, Малдиви, road trip, винарни..."></textarea>
-        <p class="form-note">Бележките също се пазят само локално.</p>
+      <div class="panel">
+        <div class="h2">Лични AYA бележки</div>
+        <textarea id="bibi-notes" class="notes" placeholder="Италия, Paros, Малдиви, road trip, винарни..."></textarea>
+        <p class="small" style="margin-top:6px">Бележките се пазят локално. С бутона „Save as PDF“ долу можеш да ги принтираш в PDF.</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer class="site-footer">
+    <section class="section">
+      <div class="panel">
+        <div class="h2">📨 Клиентски заявки</div>
+        <p class="small">Тук можеш да въвеждаш съобщения от клиенти – гласово, от WhatsApp или от Email. Всичко остава при теб и не се качва в облак.</p>
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="voice">🎙 Voice</button>
+          <button class="tab-btn" data-tab="whatsapp">💬 WhatsApp</button>
+          <button class="tab-btn" data-tab="email">✉ Email</button>
+        </div>
+
+        <div id="tab-voice" class="tab-panel active">
+          <p class="small">Опиши или продиктувай накратко заявката. Ако браузърът ти поддържа микрофон, натисни „Start voice note“.</p>
+          <textarea id="voice-input" class="notes" placeholder="Ски от 31.01 до 07.02 2026, Gradonna Resort + St. Moritz, 3–4 нощувки..."></textarea>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <button type="button" id="voice-start" class="btn btn-outline">Start voice note</button>
+            <button type="button" id="voice-save" class="btn btn-primary">Запази заявка</button>
+          </div>
+          <p class="small" id="voice-status"></p>
+        </div>
+
+        <div id="tab-whatsapp" class="tab-panel">
+          <p class="small">Copy-paste съобщението на клиента от WhatsApp тук.</p>
+          <textarea id="wa-input" class="notes" placeholder="Постави WhatsApp текста тук..."></textarea>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <button type="button" id="wa-save" class="btn btn-primary">Запази заявка</button>
+          </div>
+        </div>
+
+        <div id="tab-email" class="tab-panel">
+          <p class="small">Paste съдържанието на клиентския Email – subject + body.</p>
+          <textarea id="mail-input" class="notes" placeholder="Постави имейл текста тук..."></textarea>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <button type="button" id="mail-save" class="btn btn-primary">Запази заявка</button>
+          </div>
+        </div>
+
+        <div style="margin-top:14px">
+          <div class="h3">Записани заявки</div>
+          <ul id="request-list" class="request-list"></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-nav">
     <div class="container footer-inner">
-      <p>С любов от GT63 & AYA · Bibi Personal Edition</p>
+      <button id="open-offers" class="btn btn-outline">View Offers</button>
+      <button id="save-pdf" class="btn btn-ghost">Save as PDF</button>
+      <button id="go-whatsapp" class="btn btn-primary">Book with AYA</button>
     </div>
   </footer>
 </body>
